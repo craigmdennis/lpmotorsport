@@ -5,11 +5,13 @@
     %meta{charset:"utf-8"}
     %meta{content:"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", name:"viewport"}
 
+    = partial "partials/favicons"
+
     %title= current_page.data.title || "LP Motorsport"
 
     = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:300,400,700"
 
-    = stylesheet_link_tag gulp_css_path("site.css")
+    = stylesheet_link_tag gulp_css_path("site.css?v=#{PACKAGE['version']}")
 
   %body{class: page_classes }
     .header
@@ -39,4 +41,4 @@
 
 
     = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"
-    = javascript_include_tag gulp_js_path("all.js")
+    = javascript_include_tag gulp_js_path("all.js?v=#{PACKAGE['version']}")
