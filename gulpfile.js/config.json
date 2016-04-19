@@ -60,7 +60,7 @@
     "images": {
       "src": "images",
       "dest": "images",
-      "extensions": ["jpg", "png", "svg", "gif"]
+      "extensions": ["jpg", "png", "svg", "gif", "jpeg"]
     },
 
     "fonts": {
