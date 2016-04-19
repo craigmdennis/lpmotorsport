@@ -1,0 +1,56 @@
+$header-bg: $codgray;
+$header-color: white;
+
+.header {
+  background-color: $header-bg;
+  color: $header-color;
+  padding: $base-spacing;
+  text-align: center;
+
+  @include breakpoint( $tablet ) {
+    padding: $base-spacing*4;
+  }
+}
+
+.header__figure {
+  width: 15%;
+  min-width: rem(100px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $base-spacing;
+
+  @include breakpoint( $tablet ) {
+    margin-bottom: $large-spacing;
+  }
+}
+
+.header__title {
+  @include height(32px);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: $small-spacing;
+
+  @include breakpoint( $tablet ) {
+    @include height(64px);
+    margin-bottom: $small-spacing/2;
+  }
+}
+
+.header__subtitle {
+  @include height(24px);
+  margin-bottom: $small-spacing;
+  font-weight: 300;
+
+  @include breakpoint( $tablet ) {
+    @include height(48px);
+  }
+}
+
+.header__offer {
+  @include height(24px);
+  color: $goldengrass;
+
+  @include breakpoint( $tablet ) {
+    @include height(32px);
+  }
+}

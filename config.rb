@@ -1,34 +1,20 @@
 # Read from Gulp Starter's config.json file
 # and rev-manifest file (if present)
-require './lib/gulp'
+require 'lib/gulp'
+require 'lib/package'
 
-###
-# Page options, layouts, aliases and proxies
-###
+# page '/*.xml', layout: false
+# page '/*.json', layout: false
+# page '/*.txt', layout: false
 
-# Per-page layout changes:
-#
-# With no layout
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
+# Pretty URLs
+activate :directory_indexes
 
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
+# Language Support
+set :haml, { :attr_wrapper => '"', :format => :html5 }
+set :markdown, fenced_code_blocks: true, smartypants: true
+set :build_dir, "public"
 
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
-
-# General configuration
-
-###
-# Helpers
-###
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+# Markdown options
+set :markdown_engine, :redcarpet
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, with_toc_data: true

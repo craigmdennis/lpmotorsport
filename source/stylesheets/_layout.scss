@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.l-constrained {
+  @include container(68em);
+}
+
+.l-half {
+  @include rwd( tablet ) {
+    width: 50%;
+    float: left;
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
+}
+
+.l-inner {
+  @include rwd( mobile ) {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+  }
+}

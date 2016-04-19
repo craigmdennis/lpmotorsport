@@ -1,0 +1,13 @@
+.gallery.module---MQtablet{data: { toggle: "gallery" }}
+  - sitemap.resources.select{|r| r.path.start_with?( gallery ) }.each do |image|
+
+    - title = image.path.gsub(gallery.to_s, "")
+    - title = title.gsub("/", "")
+    - title = title.gsub(".jpeg", "")
+    - title = title.gsub("-", " ").titleize
+
+    - thumb = image.path
+    - full = image.path.sub "thumbs", "full"
+
+    = link_to full, class: "gallery__item", title: title do
+      = image_tag thumb, class: "gallery__image", alt: title

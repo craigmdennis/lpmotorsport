@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %meta{content:"IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{charset:"utf-8"}
+    %meta{content:"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", name:"viewport"}
+
+    %title= current_page.data.title || "LP Motorsport"
+
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:300,400,700"
+
+    = stylesheet_link_tag gulp_css_path("site.css")
+
+  %body{class: page_classes }
+    .header
+      .header__figure
+        = sprite "lamborghini-logo"
+      .header__title For Sale
+      .header__subtitle= current_page.data.car
+      .header__offer= current_page.data.price
+
+    - if current_page.data.gallery
+      = partial "partials/gallery", locals: { gallery: current_page.data.gallery}
+
+    .l-constrained.module
+      .l-half---MQtablet.module---MQmobile
+        %dl.spec-list
+          - current_page.data.spec.each do |spec|
+            %dt.spec-list__title= spec[0]
+            %dd.spec-list__definition= spec[1]
+          %dt.spec-list__title.spec-list--inverted Asking Price
+          %dd.spec-list__definition.spec-list--inverted= current_page.data.price
+
+      .l-half---MQtablet
+        .l-inner---MQmobile
+          .copy
+            %h1.copy__intro= current_page.data.intro
+            = yield
+
+
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"
+    = javascript_include_tag gulp_js_path("all.js")

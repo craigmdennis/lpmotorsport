@@ -1,0 +1,30 @@
+.gallery {
+  @include container;
+  //margin: gutter(12)/2 gutter(12);
+}
+
+.gallery__item {
+  //@include gallery( 6 of 12 );
+  //margin-top: gutter(12)/2;
+  //margin-bottom: gutter(12)/2;
+  width: 50%;
+  float: left;
+
+  @include susy-breakpoint( $tablet ) {
+    //@include gallery( 3 of 12 );
+    width: 25%;
+  }
+  //width: 50%;
+  //float: left;
+  //padding: $small-spacing;
+
+  //@include breakpoint( $tablet ) {
+    //width: 25%;
+  //}
+}
+
+.gallery__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

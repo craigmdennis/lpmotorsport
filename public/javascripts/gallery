@@ -1,0 +1,18 @@
+(function() {
+  require('magnific-popup');
+
+  $('[data-toggle="gallery"]').magnificPopup({
+    delegate: 'a',
+    mainClass: 'mfp-with-zoom',
+    zoom: {
+      enabled: true,
+      duration: 300,
+      easing: 'ease-in-out'
+    },
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
+
+}).call(this);

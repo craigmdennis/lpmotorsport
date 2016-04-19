@@ -7,7 +7,7 @@
   "tasks": {
     "browserSync": {
       "proxy": "http://localhost:4567",
-      "reloadDelay" : 2000
+      "reloadDelay" : 1000
     },
 
     "static": {
@@ -19,9 +19,9 @@
       "src": "javascripts",
       "dest": "javascripts",
       "entries": {
-        "all": ["./all.js"]
+        "all": ["./all.coffee"]
       },
-      "extensions": ["js", "json"],
+      "extensions": ["js", "json", "coffee"],
       "babel": {
         "presets": ["es2015", "stage-1"],
         "plugins": []
@@ -36,7 +36,15 @@
       },
       "sass": {
         "indentedSyntax": false,
-        "includePaths": []
+        "includePaths": [
+          "./node_modules/normalize.css",
+          "./node_modules/bourbon/app/assets/stylesheets",
+          "./node_modules/breakpoint-sass/stylesheets",
+          "./node_modules/susy/sass",
+          "./node_modules/sass-height",
+          "./node_modules/rwdcss/",
+          "./node_modules/"
+        ]
       },
       "extensions": ["sass", "scss", "css"]
     },
