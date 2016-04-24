@@ -1,30 +1,47 @@
 .gallery {
   @include container;
-  //margin: gutter(12)/2 gutter(12);
 }
 
 .gallery__item {
-  //@include gallery( 6 of 12 );
-  //margin-top: gutter(12)/2;
-  //margin-bottom: gutter(12)/2;
+  display: block;
+  margin: 0;
   width: 50%;
   float: left;
+  position: relative;
 
   @include susy-breakpoint( $tablet ) {
-    //@include gallery( 3 of 12 );
     width: 25%;
   }
-  //width: 50%;
-  //float: left;
-  //padding: $small-spacing;
-
-  //@include breakpoint( $tablet ) {
-    //width: 25%;
-  //}
 }
 
 .gallery__image {
-  max-width: 100%;
-  height: auto;
   display: block;
+  margin: 0;
+  height: 0;
+  padding-bottom: 66.75%;
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    @include position(absolute, 0 null null 0);
+    width: auto;
+    height: 100%;
+    display: block;
+    // transform: scale(1);
+    // transition: transform $base-duration-slow $base-timing;
+  }
+
+  // &:hover > img {
+  //   transform: scale(1.05);
+  // }
 }
+
+// .gallery__caption {
+//   display: none;
+//   @include height( 14px, 40px );
+//   @include position(absolute, null 0 0 0);
+//   background-color: rgba(0,0,0,0.85);
+//   color: white;
+//   padding-left: $small-spacing;
+//   padding-right: $small-spacing;
+// }

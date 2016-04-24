@@ -1,13 +1,25 @@
-.gallery.module---MQtablet{data: { toggle: "gallery" }}
+.gallery.module---MQtablet{itemscope: true, itemtype: "http://schema.org/ImageGallery", data: { toggle: "gallery" }}
   - sitemap.resources.select{|r| r.path.start_with?( gallery ) }.each do |image|
 
     - title = image.path.gsub(gallery.to_s, "")
     - title = title.gsub("/", "")
     - title = title.gsub(".jpeg", "")
-    - title = title.gsub("-", " ").titleize
+    - title = "Image" + title.gsub("-", " ").titleize
 
-    - thumb = image.path
-    - full = image.path.sub "thumbs", "full"
+    - full = image.path
+    - tiny = image.path.sub "full", "tiny"
+    - thumb = image.path.sub "full", "thumb"
+    - retina = image.path.sub "full", "thumbs-2x"
 
-    = link_to full, class: "gallery__item", title: title do
-      = image_tag thumb, class: "gallery__image", alt: title
+    %figure.gallery__item{ itemprop: "associatedMedia", itemscope: true, itemtype: "http://schema.org/ImageObject" }
+      = link_to full, class: "gallery__image", "data-size" => "1600x1067", itemprop: "contentUrl" do
+
+        = image_tag tiny, "data-src" => thumb, "data-src-retina" => retina , alt: title, itemprop: "thumbnail"
+
+        %noscript
+          = image_tag thumb, srcset: "#{retina} 2x", alt: title, itemprop: "thumbnail"
+
+      -# %figcaption.gallery__caption{ itemprop: "caption description" }= title
+
+      -# %figcaption{ itemprop: "caption description" }
+      -#   = link_to title, full, class: "gallery__caption", "data-size" => "1600x1067", itemprop: "contentUrl"

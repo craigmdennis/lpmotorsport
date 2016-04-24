@@ -8,7 +8,7 @@ $header-color: white;
   text-align: center;
 
   @include breakpoint( $tablet ) {
-    padding: $base-spacing*4;
+    padding: $large-spacing*2;
   }
 }
 
@@ -29,6 +29,7 @@ $header-color: white;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: $small-spacing;
+  margin-top: 0;
 
   @include breakpoint( $tablet ) {
     @include height(64px);
@@ -39,6 +40,7 @@ $header-color: white;
 .header__subtitle {
   @include height(24px);
   margin-bottom: $small-spacing;
+  margin-top: 0;
   font-weight: 300;
 
   @include breakpoint( $tablet ) {

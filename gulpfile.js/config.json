@@ -1,7 +1,8 @@
 {
   "root": {
     "src": "./source",
-    "dest": "./.tmp"
+    "dest": "./.tmp",
+    "public": "./public"
   },
 
   "tasks": {
@@ -53,14 +54,20 @@
       "src": "./",
       "dest": "./",
       "htmlmin": {},
-      "extensions": ["html", "erb", "haml"],
+      "extensions": ["html", "erb", "haml", "md", "yml"],
       "excludeFolders": ["images", "javascripts", "stylesheets"]
     },
 
     "images": {
       "src": "images",
       "dest": "images",
-      "extensions": ["jpg", "png", "svg", "gif", "jpeg"]
+      "extensions": ["jpg", "png", "svg", "gif", "jpeg"],
+      "copy" : [
+        "./node_modules/photoswipe/dist/default-skin/default-skin.svg",
+        "./node_modules/photoswipe/dist/default-skin/default-skin.png",
+        "./node_modules/photoswipe/dist/default-skin/preloader.gif",
+        "*!README.md"
+      ]
     },
 
     "fonts": {

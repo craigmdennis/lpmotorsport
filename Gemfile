@@ -14,3 +14,4 @@ gem 'middleman-minify-html'
 gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 
 gem 'redcarpet'
+gem 'fastimage'

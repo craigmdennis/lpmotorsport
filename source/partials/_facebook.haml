@@ -1,0 +1,14 @@
+- if defined? current_page.path
+  %meta{:content => current_page.path, :property => "og:url"}
+
+- if defined? site.data.name
+  %meta{:content => site.data.name, :property => "og:site_name"}
+
+- if defined? current_page.data.title
+  %meta{:content => current_page.data.title, :property => "og:title"}
+
+- if defined? current_page.data.description
+  %meta{:content => current_page.data.description, :property => "og:description"}
+
+- if defined? current_page.data.image
+  %meta{:content => current_page.data.image, :property => "og:image"}

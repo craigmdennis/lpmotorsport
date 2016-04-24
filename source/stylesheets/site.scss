@@ -4,9 +4,12 @@
 @import "breakpoint";
 @import "sass-height";
 @import "rwd";
-@import "magnific-popup/src/css/main";
 
 @import "vars";
+
+@import "photoswipe/src/css/main";
+@import "photoswipe/src/css/default-skin/default-skin";
+
 @import "header";
 @import "type";
 @import "gallery";
@@ -14,3 +17,4 @@
 @import "spec-list";
 @import "module";
 @import "copy";
+@import "contact";

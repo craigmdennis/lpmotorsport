@@ -13,9 +13,11 @@ var paths = {
 }
 
 var imagesTask = function() {
-  return gulp.src([paths.src, , '*!README.md'])
+  return gulp.src(config.tasks.images.copy.concat(paths.src))
     .pipe(changed(paths.dest)) // Ignore unchanged files
-    .pipe(imagemin()) // Optimize
+    .pipe(imagemin({
+      progressive: true
+    })) // Optimize
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }

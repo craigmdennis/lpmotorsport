@@ -3,42 +3,63 @@
   %head
     %meta{content:"IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{charset:"utf-8"}
-    %meta{content:"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", name:"viewport"}
+    %meta{content:"width=device-width,initial-scale=1.0,minimum-scale=1.0", name:"viewport"}
+    %meta{name: "format-detection", content:"telephone=no"}
+
+    = partial "partials/cache"
+    = partial "partials/facebook"
+    = partial "partials/twitter"
 
     = partial "partials/favicons"
 
-    %title= current_page.data.title || "LP Motorsport"
+    %title= "For Sale: " + current_page.data.car + " — " + data.site.name || data.site.name
 
-    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:300,400,700"
+    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Lato:300,400,400italic,700"
 
-    = stylesheet_link_tag gulp_css_path("site.css?v=#{PACKAGE['version']}")
+    = stylesheet_link_tag gulp_css_path("site.css")
 
   %body{class: page_classes }
-    .header
+    %header.header
       .header__figure
         = sprite "lamborghini-logo"
-      .header__title For Sale
-      .header__subtitle= current_page.data.car
-      .header__offer= current_page.data.price
+      %h2.header__title For Sale
+      %h1.header__subtitle= current_page.data.car
+      -# .header__offer= current_page.data.price
 
     - if current_page.data.gallery
       = partial "partials/gallery", locals: { gallery: current_page.data.gallery}
 
     .l-constrained.module
       .l-half---MQtablet.module---MQmobile
-        %dl.spec-list
-          - current_page.data.spec.each do |spec|
-            %dt.spec-list__title= spec[0]
-            %dd.spec-list__definition= spec[1]
-          %dt.spec-list__title.spec-list--inverted Asking Price
-          %dd.spec-list__definition.spec-list--inverted= current_page.data.price
+        %section
+          %dl.spec-list
+            - current_page.data.spec.each do |spec|
+              %dt.spec-list__title= spec[0]
+              %dd.spec-list__definition= spec[1]
+            %dt.spec-list__title.spec-list--inverted Asking Price
+            %dd.spec-list__definition.spec-list--inverted
+              %strong= current_page.data.price
 
       .l-half---MQtablet
-        .l-inner---MQmobile
-          .copy
-            %h1.copy__intro= current_page.data.intro
-            = yield
+        %section
+          .l-inner---MQmobile
+            .copy
+              %h1.copy__intro= current_page.data.intro
 
+            - contact = current_page.data.contact
+            - if defined? contact
+              .contact
+                %h2.contact__name= contact.name
+
+                - if defined? contact.email
+                  =link_to contact.email, "mailto:#{contact.email}?subject=#{current_page.data.car} For Sale", class: "contact__value"
+
+                - if defined? contact.tel
+                  =link_to contact.tel, "tel:#{contact.tel}", class: "contact__value"
+              .copy
+                = yield
+
+    = partial "partials/photoswipe"
 
     = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"
-    = javascript_include_tag gulp_js_path("all.js?v=#{PACKAGE['version']}")
+    = javascript_include_tag gulp_js_path("all.js")

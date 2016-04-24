@@ -1,0 +1,12 @@
+%meta{:content => "summary_large_image", :name => "twitter:card"}
+-# %meta{:content => "@nytimes", :name => "twitter:site"}
+-# %meta{:content => "@SarahMaslinNir", :name => "twitter:creator"}
+
+- if defined? current_page.data.title
+  %meta{:content => current_page.data.title, :name => "twitter:title"}
+
+- if defined? current_page.data.intro
+  %meta{:content => current_page.data.intro, :name => "twitter:description"}
+
+- if defined? current_page.data.image
+  %meta{:content => current_page.data.image, :name => "twitter:image"}

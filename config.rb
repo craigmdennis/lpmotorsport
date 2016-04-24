@@ -2,6 +2,7 @@
 # and rev-manifest file (if present)
 require 'lib/gulp'
 require 'lib/package'
+require 'fastimage'
 
 # page '/*.xml', layout: false
 # page '/*.json', layout: false

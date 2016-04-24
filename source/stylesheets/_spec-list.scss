@@ -21,8 +21,8 @@
   width: 50%;
   display: block;
   float: left;
-  padding-left: $small-spacing;
-  padding-right: $small-spacing;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
   margin: 0;
 
   @include breakpoint( $tablet ) {

@@ -43,6 +43,16 @@ module.exports = function(env) {
     module: {
       loaders: [
         {
+          test: /\.jpe?g$|\.gif$|\.png$|\.svg$/,
+          loader: "file",
+          query: {
+            name: "../images/[name].[ext]",
+            minimize: true,
+            progressive: true,
+            optimizationLevel: 5
+          }
+        },
+        {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
