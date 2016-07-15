@@ -1,7 +1,7 @@
 # Middleman + Gulp Starter
 Build static sites using [Middleman](https://middlemanapp.com/) with [Gulp Starter](https://github.com/vigetlabs/gulp-starter).
 
-<a href="https://youtu.be/-io8EeB3GHI" target="_blank"><img src="http://d.pr/i/13Fxy+" width="600"/></a>
+<a href="https://youtu.be/-io8EeB3GHI" target="_blank"><img src="https://www.dropbox.com/s/pohsw2b0csi8zyo/middleman-gulp-thumb.jpg ?raw=1" width="600"/></a>
 
 Watch the screencast: https://youtu.be/-io8EeB3GHI
 
