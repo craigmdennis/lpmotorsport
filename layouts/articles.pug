@@ -1,0 +1,13 @@
+extends default.pug
+
+include ../mixins/fileName
+
+block content
+  ul
+    for entry in data.entries
+      li
+        h2
+          +fileName(entry._fileName)
+            = entry.fields.title
+
+        p= entry.fields.description

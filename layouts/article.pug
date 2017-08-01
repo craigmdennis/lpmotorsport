@@ -1,0 +1,7 @@
+extends default.pug
+
+block content
+  h1!= data.fields.title
+
+  div(data-markdown)
+    = data.fields.body
