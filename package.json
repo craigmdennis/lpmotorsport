@@ -1,10 +1,10 @@
 {
-  "name": "contentful-metalsmith-boilerplate",
+  "name": "lpmotorsport",
   "version": "1.0.0",
-  "description": "A boilerplate to use Contentful and Metalsmith together to generate a static site.",
+  "description": "LP Motorsport",
   "repository": {
     "type": "git",
-    "url": "https://github.com/craigmdennis/contentful-metalsmith-boilerplate/"
+    "url": "https://github.com/craigmdennis/lpmotorsport/"
   },
   "scripts": {
     "start": "SERVE=1 node build.js",
