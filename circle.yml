@@ -15,7 +15,7 @@ dependencies:
 compile:
   override:
     - yarn build
-  
+
 deployment:
   production:
     branch: master
