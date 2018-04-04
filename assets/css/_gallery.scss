@@ -1,0 +1,31 @@
+.gallery {
+  @include container;
+}
+
+.gallery__item {
+  display: block;
+  margin: 0;
+  width: 50%;
+  float: left;
+  position: relative;
+
+  @include susy-breakpoint( $tablet ) {
+    width: 25%;
+  }
+}
+
+.gallery__image {
+  display: block;
+  margin: 0;
+  height: 0;
+  padding-bottom: 66.75%;
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    @include position(absolute, 0 null null 0);
+    width: auto;
+    height: 100%;
+    display: block;
+  }
+}

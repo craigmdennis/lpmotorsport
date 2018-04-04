@@ -1,29 +1,90 @@
 extends(src='layout.sgr')
   block(name='content')
-    h2 Hello World!
-    p(retext-skip) Thanks for using <a href='https://github.com/static-dev/spike'>spike</a>
-    p Example of locals: {{ foo }}
-    p(mdi) Example of **markdown**
-    p Example of "smart quotes" -- and dashes
+    header.header
+      .header__figure
+      h2.header__title For Sale
+      h1.header__subtitle Lamborghini Murciélago
 
-    hr
+    .gallery.module---MQtablet
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
+      figure.gallery__item
+        a.gallery__image(href="#", data-size="1600x1067")
+          img(src="https://placehold.it/300x200" data-src="https://placehold.it/600x400" data-src-retina="https://placehold.it/1200x800")
 
-    h3 Getting Started
-    h4 The Stack:
-    ul
-      li
-        a(href="http://github.com/reshape/reshape") reshape
-        |  for HTML transforms
-      li
-        a(href="https://babeljs.io/") babel
-        |  for JS transforms
-      li
-        a(href="http://postcss.org/") postcss
-        |  for CSS transforms
-      li
-        a(href="http://webpack.github.io") webpack
-        |  for JS bundling
+    .l-constrained.module
+      .l-half---MQtablet.module---MQmobile
+        section
+          dl.spec-list
+            dt.spec-list__title Year
+            dd.spec-list__definition 2004 (54 Reg)
+            
+            dt.spec-list__title Mileage
+            dd.spec-list__definition 21,000 Miles
+            
+            dt.spec-list__title Transmission
+            dd.spec-list__definition Manual (6 speed)
+            
+            dt.spec-list__title Mileage
+            dd.spec-list__definition 21,000 Miles
+            
+            dt.spec-list__title Fuel
+            dd.spec-list__definition Petrol
+            
+            dt.spec-list__title.spec-list--inverted Asking Price
+            dd.spec-list__definition.spec-list--inverted
+              strong £110,000
 
-    p Customize your settings by editing the
-      a(href="https://spike.readme.io/docs/appjs") app.js
-      |  file or simply start by editing this view
+      .l-half---MQtablet
+        section
+          .l-inner---MQmobile
+            .copy
+              h1.copy__intro Full Lamborghini Service History With Only Two Former Keepers
+
+            .contact
+              h2.contact__name Paul Dennis
+              a.contact__value(href="mailto:paul@lpmotorsport.co?subject=For Sale") paul@lpmotorsport.co
+              a.contact__value(href="tel://07703542854") 07703542854
+
+            .copy
+              p On offer is this **stunning, rare manual**, late 2004 Lamborghini Murciélago 6.2 V12 LP580 4WD RHD Coupe finished in the **best combination of black/black** with contrasting white stitching and **Sportivo Seats**.
+
+              p This **genuine UK car** has covered only **21,000 miles** and benefits from an up to date and **full Lamborghini service history** with an accompanying comprehensive document file, and was last serviced at Lamborghini Sevenoaks in December 2015.
+
+              p The vehicle is fully HPI clear and has been part of the current owner's private collection for the last 8 years.
+
+              p The valuable **private registration number is available** by separate negotiation.
+
+
+    

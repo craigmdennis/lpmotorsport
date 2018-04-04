@@ -1,9 +1,7 @@
 const htmlStandards = require('reshape-standard')
+const htmlParser = require('sugarml')
 const cssStandards = require('spike-css-standards')
 const jsStandards = require('spike-js-standards')
-const pageId = require('spike-page-id')
-const sugarml = require('sugarml')
-const sugarss = require('sugarss')
 const Contentful = require('spike-contentful')
 const locals = {}
 const env = process.env.SPIKE_ENV
@@ -23,15 +21,30 @@ module.exports = {
     })
   ],
   devtool: 'source-map',
-  matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock', 'package-lock.json'],
+  matchers: {
+    html: '*(**/)*.sgr',
+    css: '*(**/)*.scss'
+  },
+  ignore: [
+    '**/layout.sgr',
+    '**/_*',
+    '**/.*',
+    'readme.md',
+    'yarn.lock',
+    'package-lock.json'
+  ],
+  module: {
+    rules: [{
+      test: /\.scss/,
+      use: [{ loader: 'sass-loader' }]
+    }]
+  },
   reshape: htmlStandards({
-    parser: sugarml,
+    parser: htmlParser,
     locals: () => locals,
     minify: env === 'production'
   }),
   postcss: cssStandards({
-    parser: sugarss,
     minify: env === 'production',
     warnForDuplicates: env !== 'production'
   }),

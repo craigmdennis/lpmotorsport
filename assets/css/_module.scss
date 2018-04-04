@@ -1,0 +1,11 @@
+.module {
+  margin-bottom: $large-spacing;
+
+  @include rwd( mobile, false ) {
+    margin-bottom: $base-spacing;
+  }
+
+  @include rwd( tablet, false ) {
+    margin-bottom: $large-spacing;
+  }
+}

@@ -1,0 +1,59 @@
+// Colors
+$codgray: #060606;
+$goldengrass: #d8a016;
+
+// Social
+$twitter: #55acee;
+
+// Base
+$base-accent: $goldengrass;
+
+// Animations
+$base-duration-fast: 100ms;
+$base-duration-slow: 300ms;
+$base-timing: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+
+// Breakpoints
+$breakpoints: (
+  mobile: max-width em(767px),
+  tablet: em(768px),
+  desktop: em(1024px),
+  hd: em(1200px)
+);
+
+$mobile: map-get( $breakpoints, mobile);
+$tablet: map-get( $breakpoints, tablet);
+$desktop: map-get( $breakpoints, desktop);
+$hd: map-get( $breakpoints, hd);
+
+// Layout
+$container: $hd;
+$grid-columns: 12;
+$gutter: 3rem;
+
+$base-radius: rem(3px);
+$base-spacing: $gutter/2;
+$small-spacing: $base-spacing/2;
+$large-spacing: $gutter;
+
+$base-button-height: 40px;
+$base-button-border-width: 1px;
+
+// Typography
+$base-body: "Lato", sans-serif;
+$base-heading: $base-body;
+
+// Layering
+$z: (
+  ground: -3000,
+  basement: -2000,
+  floor: -1000,
+  table: 0,
+  bottom_bun: 1000,
+  condiment: 2000,
+  cheese: 3000,
+  meat: 4000,
+  top_bun: 5000
+);
+
+$pswp__assets-path: "/images/";
