@@ -1,6 +1,3 @@
-node_modules/
-build/
-bower_components/
-logo.sketch/
 .DS_Store
-.env
+node_modules
+public
